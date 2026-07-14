@@ -157,12 +157,12 @@ body.has-custom-cursor,body.has-custom-cursor a,body.has-custom-cursor button{cu
   .hero{position:relative}
   .hero-grid{display:block;min-height:0}
   .hero-copy-wrap{padding:30px 0 34px;position:relative;z-index:2}
-  .hero-copy{max-width:60%}
-  .hero h1{font-size:29px}
-  .hero .sub{font-size:15.5px;max-width:100%}
+  .hero-copy{max-width:55%}
+  .hero h1{font-size:27px}
+  .hero .sub{font-size:15px;max-width:56%}
   .hero-ctas{flex-direction:column;align-items:flex-start}
-  .hero-photo-bleed{position:absolute;top:0;bottom:0;right:-10%;width:56%;z-index:1;background:transparent;pointer-events:none}
-  .hero-photo{object-position:right bottom}
+  .hero-photo-bleed{position:absolute;inset:0;overflow:hidden;z-index:1;background:transparent;pointer-events:none}
+  .hero-photo{position:absolute;top:3%;right:auto;bottom:auto;left:-8%;width:238%;height:auto;max-width:none;margin:0;transform:none}
   .section{padding:64px 0}
   .section h2{font-size:28px}
   .how-grid{grid-template-columns:1fr}
