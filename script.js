@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('mousemove', function (ev) {
       logo.style.left = ev.clientX + 'px'; logo.style.top = ev.clientY + 'px';
       var el = document.elementFromPoint(ev.clientX, ev.clientY);
-      var onDark = el && el.closest && el.closest('.quote,.word-full,.guarantee');
+      var onDark = el && el.closest && el.closest('.quote,.word-full,.guarantee,.float-bar');
       logo.classList.toggle('on-dark', !!onDark);
     });
 
@@ -107,5 +107,25 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
     });
+  }
+
+  // Barra flotante: aparece sola a los 2s (flotando desde abajo) y se oculta cerca del footer
+  var floatBar = document.getElementById('float-bar');
+  var topSection = document.querySelector('.hero');
+  var siteFooter = document.querySelector('.site-footer');
+  if (floatBar && topSection && siteFooter) {
+    var topVisible = true, footerVisible = false, forceShow = false;
+    var syncFloatBar = function () {
+      floatBar.classList.toggle('float-hidden', (topVisible && !forceShow) || footerVisible);
+    };
+    setTimeout(function () { forceShow = true; syncFloatBar(); }, 2200);
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { topVisible = e.isIntersecting; });
+      syncFloatBar();
+    }, { threshold: 0 }).observe(topSection);
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { footerVisible = e.isIntersecting; });
+      syncFloatBar();
+    }, { threshold: 0.15 }).observe(siteFooter);
   }
 });
