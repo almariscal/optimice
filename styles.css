@@ -54,8 +54,9 @@ img{max-width:100%;display:block}
 .hero h1{font-weight:800;font-size:64px;line-height:1.06;letter-spacing:-.035em;margin-bottom:26px}
 .hero .sub{font-size:19px;color:var(--text-mid);max-width:50ch;margin-bottom:36px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.hero-photo-bleed{position:relative;overflow:hidden;background:var(--dark)}
-.hero-photo{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:contrast(1.05)}
+.hero-photo-bleed{position:relative;overflow:hidden;background:var(--paper)}
+.hero-photo{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:grayscale(.85) sepia(.15) contrast(1.08) brightness(1.03);
+  mask-image:linear-gradient(to right,transparent 0,black 48px);-webkit-mask-image:linear-gradient(to right,transparent 0,black 48px)}
 
 /* ---------- Cursor personalizado: logotipo circular del ratón ---------- */
 .cursor-logo{position:fixed;top:0;left:0;pointer-events:none;z-index:9997;width:34px;height:34px;border-radius:50%;
@@ -147,18 +148,18 @@ body.has-custom-cursor,body.has-custom-cursor a,body.has-custom-cursor button{cu
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr 42%;min-height:480px}
+  .hero-grid{grid-template-columns:1fr 34%;min-height:460px}
   .hero-copy-wrap{padding:48px 0}
-  .hero h1{font-size:40px}
-  .hero-photo{object-position:70% center}
+  .hero h1{font-size:42px}
+  .hero-photo{object-position:38% center}
   .how-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
 }
 @media (max-width:680px){
-  .hero-grid{grid-template-columns:1fr 36%;min-height:420px}
+  .hero-grid{grid-template-columns:1fr 34%;min-height:400px}
   .hero-copy-wrap{padding:36px 0}
-  .hero h1{font-size:28px}
-  .hero .sub{font-size:15.5px}
+  .hero h1{font-size:32px}
+  .hero .sub{font-size:16px}
   .hero-ctas{flex-direction:column;align-items:flex-start}
   .section{padding:64px 0}
   .section h2{font-size:28px}
