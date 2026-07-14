@@ -147,19 +147,19 @@ body.has-custom-cursor,body.has-custom-cursor a,body.has-custom-cursor button{cu
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr;min-height:0}
-  .hero-photo-bleed{order:-1;height:340px}
-  .hero-copy-wrap{padding:52px 0 40px}
-  .hero h1{font-size:48px}
+  .hero-grid{grid-template-columns:1fr 42%;min-height:480px}
+  .hero-copy-wrap{padding:48px 0}
+  .hero h1{font-size:40px}
+  .hero-photo{object-position:70% center}
   .how-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
 }
 @media (max-width:680px){
-  .hero-copy{text-align:center}
-  .hero h1{font-size:36px}
-  .hero .sub{margin-left:auto;margin-right:auto}
-  .hero-ctas{justify-content:center}
-  .hero-photo-bleed{height:240px}
+  .hero-grid{grid-template-columns:1fr 36%;min-height:420px}
+  .hero-copy-wrap{padding:36px 0}
+  .hero h1{font-size:28px}
+  .hero .sub{font-size:15.5px}
+  .hero-ctas{flex-direction:column;align-items:flex-start}
   .section{padding:64px 0}
   .section h2{font-size:28px}
   .how-grid{grid-template-columns:1fr}
