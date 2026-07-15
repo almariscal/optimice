@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<script>
+/* Idioma por defecto: si el navegador no está en español (y el usuario no ha
+   elegido idioma manualmente antes), cargar la versión en inglés. */
+(function(){try{
+  if(localStorage.getItem('optLang'))return;
+  var ls=navigator.languages||[navigator.language||navigator.userLanguage||''];
+  var isES=ls.some(function(l){return (l||'').toLowerCase().slice(0,2)==='es';});
+  if(!isES)location.replace('en/');
+}catch(e){}})();
+</script>
 <title>Optimouse — más clientes, menos trabajo manual</title>
 <meta name="description" content="Agencia de marketing, automatización e IA para pymes. Captamos clientes, quitamos trabajo manual y optimizamos lo que ya tiene. Con criterio y datos, no humo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,7 +128,7 @@
 
 <div class="float-bar float-hidden" id="float-bar">
   <a class="float-btn float-btn-primary" href="https://calendar.app.google/JsAp8YLcphyeCLzh8" target="_blank" rel="noopener"><span class="cta-ico">📅</span>Reservar llamada</a>
-  <a class="float-btn float-btn-secondary" href="https://www.linkedin.com/company/CAMBIA-ESTE-PERFIL" target="_blank" rel="noopener"><span class="cta-ico">in</span>LinkedIn</a>
+  <a class="float-btn float-btn-secondary" href="https://www.linkedin.com/company/optimouse/" target="_blank" rel="noopener"><span class="cta-ico">in</span>LinkedIn</a>
 </div>
 </body>
 </html>

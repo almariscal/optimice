@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Al cambiar de idioma manualmente, recordar la elección para no auto-redirigir
+  document.querySelectorAll('.lang-switch').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem('optLang', '1'); } catch (e) {} });
+  });
+
   // Reveal on scroll (con stagger dentro de un mismo grupo)
   document.querySelectorAll('.how-grid').forEach(function (group) {
     Array.prototype.forEach.call(group.querySelectorAll('.reveal'), function (el, i) {
