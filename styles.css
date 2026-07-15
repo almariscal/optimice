@@ -26,7 +26,7 @@ body{font-family:"Inter",system-ui,-apple-system,sans-serif;background:var(--pap
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:1160px;margin:0 auto;padding:0 28px}
-.highlight{background:var(--coral);color:var(--coral-ink);padding:.02em .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.highlight{background:var(--coral);color:var(--coral-ink);padding:.02em .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone;text-shadow:none}
 
 /* ---------- Header ---------- */
 .site-header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
