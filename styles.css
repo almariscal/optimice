@@ -52,8 +52,18 @@ img{max-width:100%;display:block}
 .hero{overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,1fr);align-items:stretch;min-height:640px}
 .hero-copy-wrap{display:flex;align-items:center;padding:64px 0}
+.hero-copy-wrap>.container{min-width:0}
 .hero-copy{max-width:600px}
 .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mid);border:1.5px solid var(--line);border-radius:999px;padding:7px 16px;margin-bottom:30px}
+/* Ticker horizontal (eyebrow en movimiento, estilo b-ta) */
+.ticker{overflow:hidden;margin-bottom:30px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ticker-track{display:inline-flex;align-items:center;white-space:nowrap;animation:ticker 26s linear infinite;will-change:transform}
+.ticker-track .tk{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mid)}
+.ticker-track .tk-dot{width:5px;height:5px;border-radius:50%;background:var(--coral);margin:0 18px;flex:none}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 .hero h1{font-weight:800;font-size:64px;line-height:1.06;letter-spacing:-.035em;margin-bottom:26px}
 .hero .sub{font-size:19px;color:var(--text-mid);max-width:50ch;margin-bottom:36px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
@@ -161,13 +171,14 @@ body.has-custom-cursor,body.has-custom-cursor a,body.has-custom-cursor button{cu
 @media (max-width:680px){
   .hero{position:relative}
   .hero-grid{display:block;min-height:0}
-  .hero-copy-wrap{padding:30px 0 34px;position:relative;z-index:2}
-  .hero-copy{max-width:47%}
-  .hero h1{font-size:24px}
-  .hero .sub{font-size:14.5px;max-width:47%}
+  .hero-copy-wrap{display:block;padding:30px 0 34px;position:relative;z-index:2}
+  .hero-copy{max-width:100%}
+  .ticker{margin-bottom:20px}
+  .hero h1{font-size:34px;max-width:88%;margin-bottom:16px}
+  .hero .sub{font-size:15.5px;max-width:56%}
   .hero-ctas{flex-direction:column;align-items:flex-start}
   .hero-photo-bleed{position:absolute;inset:0;overflow:hidden;z-index:1;background:transparent;pointer-events:none}
-  .hero-photo{position:absolute;top:auto;right:auto;bottom:0;left:26%;width:152%;height:auto;max-width:none;margin:0;transform:none}
+  .hero-photo{position:absolute;top:auto;right:auto;bottom:0;left:42%;width:150%;height:auto;max-width:none;margin:0;transform:none}
   .section{padding:64px 0}
   .section h2{font-size:28px}
   .how-grid{grid-template-columns:1fr}
